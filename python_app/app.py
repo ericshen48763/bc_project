@@ -8,7 +8,7 @@ API_URL = "http://127.0.0.1:8000/get_proof"
 RPC_URL = "http://127.0.0.1:8545"
 
 # ⚠️ 請填入你剛剛重新部署的新合約地址
-CONTRACT_ADDRESS = "0x5fbdb2315678afecb367f032d93f642f64180aa3" 
+CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3" 
 
 # ⚠️ 請填入新的 ABI (因為我們修改了 postMessage 函數和事件)
 # ⚠️ 純淨版的新合約 ABI (已將 true/false 轉換為 Python 的 True/False)
