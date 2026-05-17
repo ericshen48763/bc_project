@@ -1,7 +1,7 @@
 # 🧱 BlockWhisper 開發協作指南 (Internal README)
 
 哈囉！這裡是 BlockWhisper 的核心程式碼庫。
-我們目前的架構正在經歷一次重大的進化：從原本的「Merkle Tree 測試版」，正式邁向業界最高標準的**「無錢包架構 (Walletless) + Google SSO + 環簽章 (Ring Signatures)」**。
+我們目前的架構正在經歷一次重大的進化：從原本的「Merkle Tree 測試版」，正式邁向業界最高標準的「無錢包架構 (Walletless) + Google SSO + 環簽章 (Ring Signatures)」。
 
 為了讓開發體驗更順暢，我們已經導入了自動化建置與部署腳本。請在開發或測試前，先詳細閱讀以下說明。
 
@@ -24,23 +24,41 @@
  ┃ ┗ 📜 requirements.txt # Python 套件清單
  ┃
  ┣ 📜 setup.bat          # 🛠️ [Windows] 一鍵安裝開發環境腳本
- ┗ 📜 start.bat          # 🚀 [Windows] 一鍵啟動全端系統腳本
+ ┣ 📜 start.bat          # 🚀 [Windows] 一鍵啟動全端系統腳本
+ ┣ 📜 setup.sh           # 🛠️ [Mac/Linux] 一鍵安裝開發環境腳本
+ ┗ 📜 start.sh           # 🚀 [Mac/Linux] 一鍵啟動全端系統腳本
  ```
 
 ---
 
-## 🚀 本地端開發環境啟動流程 (自動化版)
+# 🚀 本地端開發環境啟動流程 (自動化版)
 第一步：環境初始化 (僅首次 Clone 或套件更新時需要)
 確保電腦已安裝 Node.js 與 Python 3。
 
+Windows
+
 在專案根目錄下，對著 setup.bat 點擊兩下執行。
+Mac/Linux
+```
+chmod +x setup.sh
+./setup.sh
+```
 
 腳本會自動建立虛擬環境 (venv)、安裝 Python 套件、並下載 Hardhat 區塊鏈相依套件。
 
 看到「所有環境建置完畢！」後，按任意鍵關閉視窗。
 
 第二步：一鍵啟動系統
+
+Windows:
+
 在專案根目錄下，對著 start.bat 點擊兩下執行。
+
+Mac/Linux
+```
+chmod +x start.sh
+./start.sh
+```
 
 腳本會自動幫你：
 
@@ -55,8 +73,9 @@
 啟動 Streamlit 網頁介面
 
 系統會彈出三個黑色終端機視窗，請勿關閉。 若要停止系統，直接將那三個視窗打叉關閉即可。
+
 ---
-## 開發里程碑與時程規劃
+# 開發里程碑與時程規劃
 🚩 Milestone 1：Google SSO 與本地短暫金鑰生成
 目標：讓學生能用北大信箱登入，且網頁能在背景自動孵化出一對全新的匿名金鑰。
 
